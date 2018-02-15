@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         int itemPosition=newsRecycler.getChildLayoutPosition(v);
                         Article article=response.body().get(itemPosition);
-                        service.getArticle(article.getId(),"4b987be8833a4ba8976a784c72b5b18d").enqueue(new Callback<Article>() {
+                        service.getArticle(article.getId(),"API_KEY").enqueue(new Callback<Article>() {
                             @Override
                             public void onResponse(Call<Article> call, Response<Article> response) {
                                 Log.d("Article", response.body().getDescription());
